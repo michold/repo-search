@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<% if repos.empty? && !search_term.empty? %>
+<% if repos.empty? && !search_term.blank? %>
   <h3>No repositories found.</h3>
 <% end %>
 
