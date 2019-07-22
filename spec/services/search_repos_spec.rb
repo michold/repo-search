@@ -21,7 +21,7 @@ describe SearchRepos do
     end
 
     it "calls proper methods on API response" do
-      expect(client_stub).to receive(:search_repositories).and_return(repos_stub)
+      expect(client_stub).to receive(:search_repositories).with(search_term).and_return(repos_stub)
       expect(repos_stub).to receive(:items).and_return(items)
 
       instance.search
