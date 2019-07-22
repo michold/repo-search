@@ -45,6 +45,7 @@ jobs:
           name: run linters
           command: |
             bundle exec reek --color --failure-exit-code 1 -c .reek.yml ./app
+            bundle exec rubocop --display-cop-names --format simple --config .rubocop.yml app/ spec/
 
       # collect reports
       - store_test_results:
