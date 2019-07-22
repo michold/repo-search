@@ -1,0 +1,9 @@
+echo "Installing gems..."
+bundle install --jobs=3 --quiet
+
+echo "Creating env file..."
+cat > .env << EOF
+GITHUB_ACCESS_TOKEN=github_access_token
+EOF
+
+echo "App bootstrap finished."
