@@ -4,7 +4,7 @@ class SearchRepos
   end
 
   def search
-    client
+    client.search_repositories(search_term).items
   end
 
   private
