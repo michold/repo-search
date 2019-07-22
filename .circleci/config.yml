@@ -41,6 +41,11 @@ jobs:
               --format progress \
               ./spec
 
+      - run:
+          name: run linters
+          command: |
+            bundle exec reek --color --failure-exit-code 1 -c .reek.yml ./app
+
       # collect reports
       - store_test_results:
           path: /tmp/test-results
