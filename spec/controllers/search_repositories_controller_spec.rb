@@ -14,7 +14,7 @@ describe SearchRepositoriesController do
 
     it "returns a success response" do
       get :index, params: params
-      response.should be_success
+      response.should be_successful
     end
 
     it "uses search service with proper arguments" do
@@ -29,7 +29,7 @@ describe SearchRepositoriesController do
 
       it "returns a success response" do
         get :index, params: params
-        response.should be_success
+        response.should be_successful
       end
     end
 
@@ -38,7 +38,7 @@ describe SearchRepositoriesController do
 
       it "returns a success response" do
         get :index, params: params
-        response.should be_success
+        response.should be_successful
       end
     end
   end
