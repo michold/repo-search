@@ -6,6 +6,7 @@ class SearchRepositoriesController < ApplicationController
   private
 
   def repos
+    return [] if search_term.blank?
     SearchRepos.new(search_term).search
   end
 

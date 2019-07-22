@@ -12,7 +12,7 @@ describe SearchRepositoriesController do
       allow(search_service_stub).to receive(:search).and_return(items)
     end
 
-    it "should return a success response" do
+    it "returns a success response" do
       get :index, params: params
       response.should be_success
     end
@@ -22,6 +22,24 @@ describe SearchRepositoriesController do
       expect(search_service_stub).to receive(:search).and_return(items)
 
       get :index, params: params
+    end
+
+    context "no search term" do
+      let(:params) { {} }
+
+      it "returns a success response" do
+        get :index, params: params
+        response.should be_success
+      end
+    end
+
+    context "empty string search term" do
+      let(:search_term) { "" }
+
+      it "returns a success response" do
+        get :index, params: params
+        response.should be_success
+      end
     end
   end
 end
