@@ -5,8 +5,10 @@ describe SearchRepos do
   let(:instance)    { described_class.new(search_term) }
 
   context "#search" do
-    it "works" do
-      instance
+    it "initializes github client with proper arguments" do
+      expect(Octokit::Client).to receive(:new).with(access_token: ENV.fetch("GITHUB_ACCESS_TOKEN"))
+
+      instance.search
     end
   end
 end
