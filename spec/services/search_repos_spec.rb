@@ -15,7 +15,9 @@ describe SearchRepos do
     end
 
     it "initializes github client with proper arguments" do
-      expect(Octokit::Client).to receive(:new).with(access_token: ENV.fetch("GITHUB_ACCESS_TOKEN")).and_return(client_stub)
+      expect(Octokit::Client).to receive(:new).with(
+        access_token: ENV.fetch("GITHUB_ACCESS_TOKEN")
+      ).and_return(client_stub)
 
       instance.search
     end

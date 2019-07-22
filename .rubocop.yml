@@ -9,3 +9,14 @@ Style/PercentLiteralDelimiters:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Layout/AlignHash:
+  EnforcedColonStyle: table
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
