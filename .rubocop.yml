@@ -1,0 +1,22 @@
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Layout/AlignHash:
+  EnforcedColonStyle: table
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - context
+    - describe
