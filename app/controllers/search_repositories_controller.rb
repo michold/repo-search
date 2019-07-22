@@ -1,9 +1,16 @@
 class SearchRepositoriesController < ApplicationController
   def index
-    render locals: { repos: repos }
+    render locals: locals
   end
 
   private
+
+  def locals
+    {
+      repos:       repos,
+      search_term: search_term
+    }
+  end
 
   def repos
     return [] if search_term.blank?
@@ -11,6 +18,6 @@ class SearchRepositoriesController < ApplicationController
   end
 
   def search_term
-    params[:search]
+    @search_term ||= params[:search]
   end
 end

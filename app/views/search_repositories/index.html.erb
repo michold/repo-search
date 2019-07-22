@@ -1,1 +1,13 @@
-SEAAARCH
+<h1>Github Repositories</h1>
+<%= form_tag(search_repositories_path, method: :get) do %>
+  <%= text_field_tag :search, search_term, placeholder: "enter search term..." %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<% repos.each do |repo| %>
+  <p>
+    <%= repo.name %>
+  </p>
+<% end %>
+
+<!-- todo: next site -->
