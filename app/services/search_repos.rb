@@ -4,6 +4,8 @@ class SearchRepos
   end
 
   def search
+    return [] if search_term.blank?
+
     client.search_repositories(search_term).items
   end
 

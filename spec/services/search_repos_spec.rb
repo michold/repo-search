@@ -30,5 +30,21 @@ describe SearchRepos do
     it "returns proper result" do
       expect(instance.search).to eq(items)
     end
+
+    context "nil search term" do
+      let(:search_term) { nil }
+
+      it "returns empty results array" do
+        expect(instance.search).to eq([])
+      end
+    end
+
+    context "empty string search term" do
+      let(:search_term) { "" }
+
+      it "returns empty results array" do
+        expect(instance.search).to eq([])
+      end
+    end
   end
 end
